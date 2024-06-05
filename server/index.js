@@ -6,7 +6,7 @@ const dotenv = require("dotenv").config();
 const cors = require("cors");
 
 // path added 
-const path = require('path');
+//const path = require('path');
 //const __dirname = path.resolve();
 
 const authRoutes = require("./routes/auth.js")
@@ -25,11 +25,11 @@ app.use("/bookings", bookingRoutes)
 app.use("/users", userRoutes)
 
 // Serve static assets if in production
-app.use(express.static(path.join(__dirname, '/client/dist')));//here can be build if using create react
+// app.use(express.static(path.join(__dirname, '/client/dist')));//here can be build if using create react
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
-})
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+// })
 
 /* MONGOOSE SETUP */
 const PORT = 3001;
